@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>iQTools</title>
+<meta name="description" content="مصدر iQTools — أدوات جيلبريك لسناب، تيليجرام، يوتيوب، واتساب، فيسبوك، إنستغرام وأكثر.">
+<meta name="theme-color" content="#0a0c12">
+<link rel="icon" href="iqlogo.png">
+<link rel="apple-touch-icon" href="iqlogo.png">
+<style>
+  :root{
+    --bg:#0a0c12; --bg2:#0e111a;
+    --card:#151925; --card-hi:#1b2130;
+    --line:rgba(255,255,255,.08);
+    --txt:#eef1f7; --muted:#9aa3b6; --faint:#6b7488;
+    --accent:#3b82f6; --accent2:#22d3ee;
+    --radius:20px;
+    --shadow:0 10px 40px rgba(0,0,0,.45);
+    --safe-top:env(safe-area-inset-top,0px);
+    --safe-bot:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,"SF Pro Text","SF Arabic",BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:
+      radial-gradient(1100px 620px at 78% -8%, rgba(59,130,246,.18), transparent 60%),
+      radial-gradient(900px 560px at 10% 4%, rgba(34,211,238,.12), transparent 55%),
+      var(--bg);
+    color:var(--txt);
+    line-height:1.6;
+    min-height:100vh;
+    padding:calc(var(--safe-top) + 8px) 16px calc(var(--safe-bot) + 40px);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto}
+
+  /* ---------- Hero ---------- */
+  .hero{text-align:center;padding:34px 8px 8px}
+  .logo{
+    width:104px;height:104px;border-radius:26px;object-fit:cover;
+    box-shadow:0 12px 34px rgba(59,130,246,.35), 0 2px 0 rgba(255,255,255,.05) inset;
+    border:1px solid rgba(255,255,255,.10);
+  }
+  .title{font-size:34px;font-weight:800;letter-spacing:.3px;margin:16px 0 4px;
+    background:linear-gradient(180deg,#fff,#bcd0f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{color:var(--muted);font-size:15.5px;margin:0 auto;max-width:420px}
+  .by{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;color:var(--faint)}
+  .by b{color:var(--accent2);font-weight:700}
+
+  /* ---------- CTA ---------- */
+  .cta{margin:26px 0 8px}
+  .btn-sileo{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;padding:17px 20px;border:0;cursor:pointer;
+    font-family:inherit;font-size:18px;font-weight:800;color:#04122b;
+    border-radius:16px;text-decoration:none;
+    background:linear-gradient(135deg,#5eead4,#3b82f6);
+    box-shadow:0 12px 30px rgba(59,130,246,.40);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn-sileo:active{transform:translateY(1px) scale(.99);box-shadow:0 6px 18px rgba(59,130,246,.35)}
+  .btn-sileo svg{width:22px;height:22px}
+
+  .managers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .mbtn{
+    display:flex;flex-direction:column;align-items:center;gap:5px;
+    padding:12px 6px;border-radius:14px;text-decoration:none;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);color:var(--txt);
+    font-family:inherit;font-size:12.5px;font-weight:600;
+    transition:background .12s ease, transform .12s ease;
+  }
+  .mbtn:active{transform:translateY(1px);background:var(--card-hi)}
+  .mbtn .mi{font-size:19px}
+
+  .urlrow{
+    display:flex;align-items:center;gap:8px;margin-top:14px;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 6px 6px 14px;
+  }
+  .urlrow code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    direction:ltr;text-align:left;font-size:13.5px;color:var(--muted);
+    font-family:ui-monospace,"SF Mono",Menlo,monospace}
+  .copy{border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:13px;
+    padding:9px 14px;border-radius:10px;color:#04122b;background:linear-gradient(135deg,#5eead4,#3b82f6)}
+  .copy:active{transform:translateY(1px)}
+
+  /* ---------- Section ---------- */
+  .sec-title{display:flex;align-items:center;gap:10px;margin:34px 4px 14px;font-size:14px;
+    font-weight:700;color:var(--faint);text-transform:uppercase;letter-spacing:1.2px}
+  .sec-title::after{content:"";flex:1;height:1px;background:var(--line)}
+  .count{background:var(--card);border:1px solid var(--line);color:var(--muted);
+    font-size:12px;padding:2px 9px;border-radius:20px;letter-spacing:0}
+
+  /* ---------- Tweak cards ---------- */
+  .grid{display:flex;flex-direction:column;gap:12px}
+  .card{
+    display:flex;align-items:center;gap:14px;padding:14px;
+    background:linear-gradient(180deg,var(--card),var(--bg2));
+    border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);transition:transform .14s ease,border-color .14s ease;
+  }
+  .card:active{transform:scale(.99);border-color:rgba(255,255,255,.18)}
+  .tile{
+    flex:none;width:58px;height:58px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.18) inset;
+  }
+  .tile svg{width:30px;height:30px}
+  .tile .mono{font-weight:900;font-size:26px;font-family:-apple-system,system-ui,sans-serif}
+  .meta{flex:1;min-width:0}
+  .meta .name{font-size:17px;font-weight:800;margin:0}
+  .meta .desc{font-size:13.5px;color:var(--muted);margin:2px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ver{flex:none;font-size:12px;font-weight:700;color:var(--accent2);
+    background:rgba(34,211,238,.10);border:1px solid rgba(34,211,238,.22);
+    padding:5px 10px;border-radius:20px;direction:ltr}
+
+  /* ---------- How-to ---------- */
+  details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-top:14px;overflow:hidden}
+  summary{cursor:pointer;padding:15px 16px;font-weight:700;font-size:15px;list-style:none;display:flex;align-items:center;gap:8px}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{margin-inline-start:auto;color:var(--faint);transition:transform .2s}
+  details[open] summary .chev{transform:rotate(180deg)}
+  .howbody{padding:0 16px 16px;color:var(--muted);font-size:14.5px}
+  .howbody ol{margin:0;padding-inline-start:20px}
+  .howbody li{margin:8px 0}
+  .howbody code{direction:ltr;background:rgba(255,255,255,.06);padding:2px 7px;border-radius:6px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px}
+
+  /* ---------- Footer ---------- */
+  footer{text-align:center;margin-top:36px;color:var(--faint);font-size:13px}
+  .tg{display:inline-flex;align-items:center;gap:8px;margin-top:12px;text-decoration:none;
+    color:var(--txt);font-weight:700;background:var(--card);border:1px solid var(--line);
+    padding:11px 20px;border-radius:14px}
+  .tg svg{width:19px;height:19px;color:#3b9fe6}
+  .tg:active{transform:translateY(1px)}
+
+  /* ---------- Toast ---------- */
+  .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--safe-bot) + 26px);
+    background:#e8fff9;color:#04231c;font-weight:700;font-size:14px;padding:12px 22px;border-radius:14px;
+    box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:50}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+
+  @media (prefers-color-scheme:light){
+    :root{--bg:#f3f5fb;--bg2:#ffffff;--card:#ffffff;--card-hi:#eef2fb;
+      --line:rgba(10,20,40,.10);--txt:#0d1220;--muted:#5a6478;--faint:#8b93a6;--shadow:0 10px 30px rgba(20,30,60,.12)}
+    .title{background:linear-gradient(180deg,#0d1220,#274b8f);-webkit-background-clip:text;background-clip:text}
+    .toast{background:#0d1220;color:#eafff8}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <img class="logo" src="iqlogo.png" alt="iQTools">
+    <h1 class="title">iQTools</h1>
+    <p class="tagline">مصدر أدوات iQ للجيلبريك — تعديلات نظيفة لأشهر التطبيقات، تحديثات مستمرة.</p>
+    <div class="by">تطوير <b>7md</b></div>
+  </header>
+
+  <section class="cta">
+    <a id="sileo" class="btn-sileo" href="#">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#04122b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      إضافة المصدر إلى Sileo
+    </a>
+
+    <div class="managers">
+      <a id="zebra" class="mbtn" href="#"><span class="mi">🦓</span>Zebra</a>
+      <a id="cydia" class="mbtn" href="#"><span class="mi">📦</span>Cydia</a>
+      <a id="saily" class="mbtn" href="#"><span class="mi">⛵️</span>Saily</a>
+    </div>
+
+    <div class="urlrow">
+      <code id="repourl">…</code>
+      <button class="copy" id="copybtn">نسخ</button>
+    </div>
+  </section>
+
+  <div class="sec-title">الأدوات <span class="count" id="count">0</span></div>
+  <div class="grid" id="grid"></div>
+
+  <details>
+    <summary>كيف أضيف المصدر يدوياً؟ <span class="chev">⌄</span></summary>
+    <div class="howbody">
+      <ol>
+        <li>افتح <b>Sileo</b> ← تبويب <b>Sources</b>.</li>
+        <li>اضغط <b>+</b> بالأعلى.</li>
+        <li>الصق الرابط: <code id="repourl2">…</code></li>
+        <li>اضغط <b>Add Source</b> وانتظر التحديث.</li>
+      </ol>
+    </div>
+  </details>
+
+  <footer>
+    <a class="tg" href="https://t.me/r71il" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9L18 5.9c.4-.3-.1-.5-.6-.2L6.7 12.4l-4.6-1.4c-1-.3-1-1 .2-1.5L20.5 2.6c.8-.3 1.6.2 1.4 1.7z"/></svg>
+      قناة التيليجرام
+    </a>
+    <p style="margin-top:16px">© iQTools · جميع الأدوات مجانية</p>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">تم نسخ الرابط ✓</div>
+
+<script>
+(function(){
+  // Repo URL is derived from wherever this page is hosted, so the buttons always point here.
+  var base = location.origin + location.pathname.replace(/index\.html?$/i,'');
+  if(!/\/$/.test(base)) base += '/';
+  var host = base.replace(/^https?:\/\//,'');
+
+  document.getElementById('repourl').textContent = base;
+  document.getElementById('repourl2').textContent = base;
+
+  document.getElementById('sileo').href = 'sileo://source/' + base;
+  document.getElementById('zebra').href = 'zbra://sources/add/' + base;
+  document.getElementById('saily').href = 'saily://url/' + base;
+  document.getElementById('cydia').href =
+    'cydia://url/https://cydia.saurik.com/api/share#?source=' + base;
+
+  // Copy repo URL
+  var toast = document.getElementById('toast');
+  function ping(){ toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show');},1600); }
+  document.getElementById('copybtn').addEventListener('click', function(){
+    var t = base;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(ping, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var i=document.createElement('input'); i.value=t; document.body.appendChild(i);
+      i.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(i); ping();
+    }
+  });
+
+  // Tweaks — icon tile is a brand-colored glyph.
+  var TWEAKS = [
+    {name:'iQSnap',     desc:'أفضل أداة لسناب شات',            ver:'0.0.1', bg:'#FFFC00', fg:'#000', g:'ghost'},
+    {name:'iQSnapiOTA', desc:'سناب شات — كل مزايا iota بأسلوب iQ', ver:'1.0', bg:'#FFFC00', fg:'#000', g:'ghost'},
+    {name:'iQTube',     desc:'أفضل أداة ليوتيوب',              ver:'1.2', bg:'#FF0033', fg:'#fff', g:'play'},
+    {name:'iQWhats',    desc:'أفضل أداة لواتساب',              ver:'1.0', bg:'#25D366', fg:'#fff', g:'whatsapp'},
+    {name:'iQFace',     desc:'أفضل أداة لفيسبوك',              ver:'1.1', bg:'#1877F2', fg:'#fff', g:'facebook'},
+    {name:'iQGram',     desc:'أفضل أداة لإنستغرام',            ver:'1.2', bg:'linear-gradient(135deg,#feda75,#d62976 55%,#4f5bd5)', fg:'#fff', g:'instagram'},
+    {name:'iQTwitter',  desc:'أفضل أداة لتويتر / X',           ver:'1.0', bg:'#000', fg:'#fff', g:'x'}
+  ];
+
+  var GLYPH = {
+    play:     '<svg viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5z" fill="CUR"/></svg>',
+    whatsapp: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9 .9-2.2c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.6-.6.8-.8 1-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.2.1.4.1.5.2.1.2.1.6-.1 1.1z" fill="CUR"/></svg>',
+    facebook: '<svg viewBox="0 0 24 24"><path d="M14 8.5V6.8c0-.8.5-1 1-1h1.5V2.6L14 2.5c-2.9 0-3.9 1.8-3.9 3.9v2.1H8v3.2h2.1V22h3.9v-10.3h2.8l.4-3.2H14z" fill="CUR"/></svg>',
+    x:        '<svg viewBox="0 0 24 24"><path d="M17.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L4.9 21H2l7.4-8.5L2 3h6.5l4.4 5.9L17.9 3zm-1.1 16h1.7L7.3 4.7H5.5L16.8 19z" fill="CUR"/></svg>',
+    instagram:'<svg viewBox="0 0 24 24" fill="none"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" stroke="CUR" stroke-width="2"/><circle cx="12" cy="12" r="4.1" stroke="CUR" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.4" fill="CUR"/></svg>',
+    ghost:    '<svg viewBox="0 0 24 24"><path d="M12 2.4c-3.5 0-6.3 2.8-6.3 6.3v8.9c0 .9 1 1.4 1.7.8l1.3-1.1 1.6 1.3c.5.4 1.2.4 1.7 0l1.3-1.1 1.3 1.1c.5.4 1.2.4 1.7 0l1.6-1.3 1.3 1.1c.7.6 1.7.1 1.7-.8V8.7c0-3.5-2.8-6.3-6.3-6.3zM9.6 9.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zm4.8 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" fill="CUR"/></svg>'
+  };
+
+  var grid = document.getElementById('grid');
+  document.getElementById('count').textContent = TWEAKS.length;
+  TWEAKS.forEach(function(t){
+    var card = document.createElement('div'); card.className='card';
+    var glyph = (GLYPH[t.g]||'').replace(/CUR/g, t.fg);
+    card.innerHTML =
+      '<div class="tile" style="background:'+t.bg+';color:'+t.fg+'">'+glyph+'</div>'+
+      '<div class="meta"><p class="name">'+t.name+'</p><p class="desc">'+t.desc+'</p></div>'+
+      '<span class="ver">v'+t.ver+'</span>';
+    grid.appendChild(card);
+  });
+})();
+</script>
+</body>
+</html>

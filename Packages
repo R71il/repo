@@ -1,0 +1,121 @@
+Package: com.7md.iqface
+Version: 1.1-20260913.212145
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 15428
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqface_1.1-20260913.212145_iphoneos-arm64-rootless.deb
+Size: 5696168
+MD5sum: a9cc6900b49b1e6b1f181df0861c70a1
+SHA1: 0fa19a5a7a4bc381fddb62d5349082bb41d5859c
+SHA256: b916502929735a0ca5e8f60812aa853bcb407a0b398d6e2ceb0ce710c755d9be
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for Facebook
+Author: 7md
+Icon: file:///var/jb/Library/Application Support/iQFace.bundle/icon.png
+Name: iQFace
+
+Package: com.7md.iqgram
+Version: 1.2-20260916.032239
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 1648
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqgram_1.2-20260916.032239_iphoneos-arm64.deb
+Size: 536032
+MD5sum: 54ce99a93358fd549d52b158c75edae5
+SHA1: 86f2f8490b176b9643422cb7ff9ebfed38f9e956
+SHA256: dde490ba3a0aa1f6775001f83672729d96dace2f0e81ed0713b6e2369bfc7db8
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for Instagram
+Author: 7md
+Name: iQGram
+
+Package: com.7md.iqsnap
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 284
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqsnap_0.0.1_iphoneos-arm64.deb
+Size: 85122
+MD5sum: bef8594d9221fd3c6e0eba753dfe0247
+SHA1: 8aab7e15dd365e22e7594393853fb00f2ad376a8
+SHA256: c2888794b86dd64d0b9841176c60cc3dbe3324ca2e4d2194ced8b95114248428
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for Snapchat
+Author: 7md
+Name: iQSnap
+
+Package: com.7md.iqsnapiota
+Version: 1.0-20260914.022200
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 380
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqsnapiota_1.0-20260914.022200_iphoneos-arm64.deb
+Size: 157366
+MD5sum: 173b4cd3108ea7c14eb2534f843d83cb
+SHA1: 3b65c1100160913d307acae046ef1e44df26079f
+SHA256: 828a0154c467b0304ddc971c34c7ff332451f5646b7e73447d9dd073062c1c6e
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for Snapchat — iota features, iQ house style
+Author: 7md
+Name: iQSnapiOTA
+
+Package: com.7md.iqtube
+Version: 1.2-20260913.211817
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 16344
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqtube_1.2-20260913.211817_iphoneos-arm64-rootless.deb
+Size: 5889012
+MD5sum: d6916f33747065eb2532f9819dcb0af7
+SHA1: 781e502ef0e2f09c44ce6957728c7a2e7199fc81
+SHA256: e1c447b08120e88764397365c65bd66a54351685fe04b1a29584443a4f9ba988
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for YouTube
+Author: 7md
+Icon: file:///var/jb/Library/Application Support/iQTube.bundle/icon.png
+Name: iQTube
+
+Package: com.7md.iqtwitter
+Version: 1.0-20260830.144817
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 180
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqtwitter_1.0-20260830.144817_iphoneos-arm64.deb
+Size: 58962
+MD5sum: 882ccd5844bc2068382e6eac9e48631d
+SHA1: 60a22059c70b2cd01f098b3e8c5d5767a50fecb0
+SHA256: f5bc81ad5a3ac5e90c5bfc774d3a726cf7a86cfc23e718a619f5f755158be949
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for Twitter / X
+Author: 7md
+Name: iQTwitter
+
+Package: com.7md.iqwhats
+Version: 1.0-20260915.015008
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 900
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqwhats_1.0-20260915.015008_iphoneos-arm64.deb
+Size: 329232
+MD5sum: 38a7cae645c50b5b8bd4980a7e69d29d
+SHA1: a1182404d3686214ebc03168a517c9703332f71a
+SHA256: bcf4665db5dbf047b9a7c2d5aba46ad45ca1e7e9cd4a6dc6a313e96bbcf73463
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for WhatsApp
+Author: 7md
+Name: iQWhats
+
