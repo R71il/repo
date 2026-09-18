@@ -1,37 +1,38 @@
 Package: com.7md.iqface
-Version: 1.1-20260913.212145
+Version: 1.1-20260918.160517
 Architecture: iphoneos-arm64
 Maintainer: 7md
-Installed-Size: 15428
+Installed-Size: 15548
 Depends: mobilesubstrate
-Filename: debs/com.7md.iqface_1.1-20260913.212145_iphoneos-arm64-rootless.deb
-Size: 5696168
-MD5sum: a9cc6900b49b1e6b1f181df0861c70a1
-SHA1: 0fa19a5a7a4bc381fddb62d5349082bb41d5859c
-SHA256: b916502929735a0ca5e8f60812aa853bcb407a0b398d6e2ceb0ce710c755d9be
+Filename: debs/com.7md.iqface_1.1-20260918.160517_iphoneos-arm64-rootless.deb
+Size: 5732212
+MD5sum: a360b1c47affeaf8e3f9d1e0202a3b8e
+SHA1: c6dad6370ae549b4ce339ee7d5cd60e157cc3773
+SHA256: 0c8f70f7dbeb63121b78ee677283c7a987b66f4e1329e4415833d720d944c40f
 Section: Tweaks
 Homepage: https://t.me/r71il
 Description: best Tweak for Facebook
 Author: 7md
-Icon: file:///var/jb/Library/Application Support/iQFace.bundle/icon.png
+Icon: https://repo.iqtweak.com/icons/com.7md.iqface.png
 Name: iQFace
 
 Package: com.7md.iqgram
-Version: 1.2-20260916.032239
+Version: 1.2-20260919.005350
 Architecture: iphoneos-arm64
 Maintainer: 7md
-Installed-Size: 1648
+Installed-Size: 2580
 Depends: mobilesubstrate
-Filename: debs/com.7md.iqgram_1.2-20260916.032239_iphoneos-arm64.deb
-Size: 536032
-MD5sum: 54ce99a93358fd549d52b158c75edae5
-SHA1: 86f2f8490b176b9643422cb7ff9ebfed38f9e956
-SHA256: dde490ba3a0aa1f6775001f83672729d96dace2f0e81ed0713b6e2369bfc7db8
+Filename: debs/com.7md.iqgram_1.2-20260919.005350_iphoneos-arm64.deb
+Size: 734530
+MD5sum: 4ba299f36bb083680d04b5605b363b3d
+SHA1: 4f19ceaaa7e22109dbf7d361c78ba72c368e14b6
+SHA256: d4d686620fb07264ee8f6ac29999a355c31623e6451e1822dbb5897456c78caa
 Section: Tweaks
 Homepage: https://t.me/r71il
 Description: best Tweak for Instagram
 Author: 7md
 Name: iQGram
+Icon: https://repo.iqtweak.com/icons/com.7md.iqgram.png
 
 Package: com.7md.iqsnap
 Version: 0.0.1
@@ -66,23 +67,42 @@ Homepage: https://t.me/r71il
 Description: best Tweak for Snapchat — iota features, iQ house style
 Author: 7md
 Name: iQSnapiOTA
+Icon: https://repo.iqtweak.com/icons/com.7md.iqsnapiota.png
 
-Package: com.7md.iqtube
-Version: 1.2-20260913.211817
+Package: com.7md.iqtelegram
+Version: 1.3.2
 Architecture: iphoneos-arm64
 Maintainer: 7md
-Installed-Size: 16344
+Installed-Size: 1820
 Depends: mobilesubstrate
-Filename: debs/com.7md.iqtube_1.2-20260913.211817_iphoneos-arm64-rootless.deb
-Size: 5889012
-MD5sum: d6916f33747065eb2532f9819dcb0af7
-SHA1: 781e502ef0e2f09c44ce6957728c7a2e7199fc81
-SHA256: e1c447b08120e88764397365c65bd66a54351685fe04b1a29584443a4f9ba988
+Filename: debs/com.7md.iqtelegram_1.3.2_iphoneos-arm64-rootless.deb
+Size: 536856
+MD5sum: 09be2b38eacade3d784c7f48ff2ad08c
+SHA1: 51088e13e8209602e8b8122e09f71d397a4e1dcc
+SHA256: a2894c2e1189883fc16d4f82cc2a90506cd72d6915e0c16df068dc258077637e
+Section: Tweaks
+Homepage: https://t.me/r71il
+Description: best Tweak for Telegram
+Author: 7md
+Name: iQTele
+Icon: https://repo.iqtweak.com/icons/com.7md.iqtelegram.png
+
+Package: com.7md.iqtube
+Version: 1.2-20260918.192207
+Architecture: iphoneos-arm64
+Maintainer: 7md
+Installed-Size: 16464
+Depends: mobilesubstrate
+Filename: debs/com.7md.iqtube_1.2-20260918.192207_iphoneos-arm64-rootless.deb
+Size: 5915804
+MD5sum: 7a6e9ef794793a62f4888cd0d7ad8ab9
+SHA1: 9bc48a416e127a090a4d2ead58f409637fc50ea7
+SHA256: 4a4a16d9de20e40e34e2ee666b9f08c50fe458bbac0eab546a20f8886fd9929e
 Section: Tweaks
 Homepage: https://t.me/r71il
 Description: best Tweak for YouTube
 Author: 7md
-Icon: file:///var/jb/Library/Application Support/iQTube.bundle/icon.png
+Icon: https://repo.iqtweak.com/icons/com.7md.iqtube.png
 Name: iQTube
 
 Package: com.7md.iqtwitter
@@ -103,19 +123,20 @@ Author: 7md
 Name: iQTwitter
 
 Package: com.7md.iqwhats
-Version: 1.0-20260915.015008
+Version: 1.0-20260917.174211
 Architecture: iphoneos-arm64
 Maintainer: 7md
-Installed-Size: 900
+Installed-Size: 936
 Depends: mobilesubstrate
-Filename: debs/com.7md.iqwhats_1.0-20260915.015008_iphoneos-arm64.deb
-Size: 329232
-MD5sum: 38a7cae645c50b5b8bd4980a7e69d29d
-SHA1: a1182404d3686214ebc03168a517c9703332f71a
-SHA256: bcf4665db5dbf047b9a7c2d5aba46ad45ca1e7e9cd4a6dc6a313e96bbcf73463
+Filename: debs/com.7md.iqwhats_1.0-20260917.174211_iphoneos-arm64.deb
+Size: 338100
+MD5sum: bbd7cf77ce323bb86744aa8a82f45a93
+SHA1: 8548df1bf5f18086f1d94c57aa37a64e633c981b
+SHA256: 5b792e86266a2b0b2204a689437bfa1b39cc8eafc06ee929ab2d73519bb5b899
 Section: Tweaks
 Homepage: https://t.me/r71il
 Description: best Tweak for WhatsApp
 Author: 7md
 Name: iQWhats
+Icon: https://repo.iqtweak.com/icons/com.7md.iqwhats.png
 
