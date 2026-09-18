@@ -1,271 +1,1175 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>iQTools</title>
-<meta name="description" content="مصدر iQTools — أدوات جيلبريك لسناب، تيليجرام، يوتيوب، واتساب، فيسبوك، إنستغرام وأكثر.">
-<meta name="theme-color" content="#0a0c12">
-<link rel="icon" href="iqlogo.png">
-<link rel="apple-touch-icon" href="iqlogo.png">
-<style>
-  :root{
-    --bg:#0a0c12; --bg2:#0e111a;
-    --card:#151925; --card-hi:#1b2130;
-    --line:rgba(255,255,255,.08);
-    --txt:#eef1f7; --muted:#9aa3b6; --faint:#6b7488;
-    --accent:#3b82f6; --accent2:#22d3ee;
-    --radius:20px;
-    --shadow:0 10px 40px rgba(0,0,0,.45);
-    --safe-top:env(safe-area-inset-top,0px);
-    --safe-bot:env(safe-area-inset-bottom,0px);
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;padding:0}
-  body{
-    font-family:-apple-system,"SF Pro Text","SF Arabic",BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
-    background:
-      radial-gradient(1100px 620px at 78% -8%, rgba(59,130,246,.18), transparent 60%),
-      radial-gradient(900px 560px at 10% 4%, rgba(34,211,238,.12), transparent 55%),
-      var(--bg);
-    color:var(--txt);
-    line-height:1.6;
-    min-height:100vh;
-    padding:calc(var(--safe-top) + 8px) 16px calc(var(--safe-bot) + 40px);
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:640px;margin:0 auto}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>iQTools — Official Jailbreak Repo</title>
+  <meta name="description" content="مصدر iQTools الرسمي لأدوات الجيلبريك — سناب، يوتيوب، إنستغرام، واتساب، فيسبوك وتويتر. إضافات قوية ومحدثة باستمرار.">
+  <meta name="theme-color" content="#07090e">
+  <link rel="icon" href="iqlogo.png">
+  <link rel="apple-touch-icon" href="iqlogo.png">
 
-  /* ---------- Hero ---------- */
-  .hero{text-align:center;padding:34px 8px 8px}
-  .logo{
-    width:104px;height:104px;border-radius:26px;object-fit:cover;
-    box-shadow:0 12px 34px rgba(59,130,246,.35), 0 2px 0 rgba(255,255,255,.05) inset;
-    border:1px solid rgba(255,255,255,.10);
-  }
-  .title{font-size:34px;font-weight:800;letter-spacing:.3px;margin:16px 0 4px;
-    background:linear-gradient(180deg,#fff,#bcd0f5);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .tagline{color:var(--muted);font-size:15.5px;margin:0 auto;max-width:420px}
-  .by{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;color:var(--faint)}
-  .by b{color:var(--accent2);font-weight:700}
+  <!-- Iconify Icons Library -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
-  /* ---------- CTA ---------- */
-  .cta{margin:26px 0 8px}
-  .btn-sileo{
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    width:100%;padding:17px 20px;border:0;cursor:pointer;
-    font-family:inherit;font-size:18px;font-weight:800;color:#04122b;
-    border-radius:16px;text-decoration:none;
-    background:linear-gradient(135deg,#5eead4,#3b82f6);
-    box-shadow:0 12px 30px rgba(59,130,246,.40);
-    transition:transform .12s ease, box-shadow .12s ease;
-  }
-  .btn-sileo:active{transform:translateY(1px) scale(.99);box-shadow:0 6px 18px rgba(59,130,246,.35)}
-  .btn-sileo svg{width:22px;height:22px}
+  <style>
+    :root {
+      --bg: #07090e;
+      --bg-surface: #0e121b;
+      --bg-card: rgba(18, 24, 38, 0.72);
+      --bg-card-hover: rgba(26, 34, 52, 0.88);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --txt-primary: #f8fafc;
+      --txt-secondary: #94a3b8;
+      --txt-muted: #64748b;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --sileo-start: #2cb1be;
+      --sileo-end: #3b82f6;
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --radius-pill: 9999px;
+      --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Arabic", "Segoe UI", Roboto, system-ui, sans-serif;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
 
-  .managers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-  .mbtn{
-    display:flex;flex-direction:column;align-items:center;gap:5px;
-    padding:12px 6px;border-radius:14px;text-decoration:none;cursor:pointer;
-    background:var(--card);border:1px solid var(--line);color:var(--txt);
-    font-family:inherit;font-size:12.5px;font-weight:600;
-    transition:background .12s ease, transform .12s ease;
-  }
-  .mbtn:active{transform:translateY(1px);background:var(--card-hi)}
-  .mbtn .mi{font-size:19px}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-  .urlrow{
-    display:flex;align-items:center;gap:8px;margin-top:14px;
-    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 6px 6px 14px;
-  }
-  .urlrow code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    direction:ltr;text-align:left;font-size:13.5px;color:var(--muted);
-    font-family:ui-monospace,"SF Mono",Menlo,monospace}
-  .copy{border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:13px;
-    padding:9px 14px;border-radius:10px;color:#04122b;background:linear-gradient(135deg,#5eead4,#3b82f6)}
-  .copy:active{transform:translateY(1px)}
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 10%, rgba(99, 102, 241, 0.14) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(14, 165, 233, 0.08) 0px, transparent 60%);
+      background-attachment: fixed;
+      color: var(--txt-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: calc(var(--safe-top) + 12px) 16px calc(var(--safe-bottom) + 40px);
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- Section ---------- */
-  .sec-title{display:flex;align-items:center;gap:10px;margin:34px 4px 14px;font-size:14px;
-    font-weight:700;color:var(--faint);text-transform:uppercase;letter-spacing:1.2px}
-  .sec-title::after{content:"";flex:1;height:1px;background:var(--line)}
-  .count{background:var(--card);border:1px solid var(--line);color:var(--muted);
-    font-size:12px;padding:2px 9px;border-radius:20px;letter-spacing:0}
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
 
-  /* ---------- Tweak cards ---------- */
-  .grid{display:flex;flex-direction:column;gap:12px}
-  .card{
-    display:flex;align-items:center;gap:14px;padding:14px;
-    background:linear-gradient(180deg,var(--card),var(--bg2));
-    border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);transition:transform .14s ease,border-color .14s ease;
-  }
-  .card:active{transform:scale(.99);border-color:rgba(255,255,255,.18)}
-  .tile{
-    flex:none;width:58px;height:58px;border-radius:16px;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 16px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.18) inset;
-  }
-  .tile svg{width:30px;height:30px}
-  .tile .mono{font-weight:900;font-size:26px;font-family:-apple-system,system-ui,sans-serif}
-  .meta{flex:1;min-width:0}
-  .meta .name{font-size:17px;font-weight:800;margin:0}
-  .meta .desc{font-size:13.5px;color:var(--muted);margin:2px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .ver{flex:none;font-size:12px;font-weight:700;color:var(--accent2);
-    background:rgba(34,211,238,.10);border:1px solid rgba(34,211,238,.22);
-    padding:5px 10px;border-radius:20px;direction:ltr}
+    /* ---------- Top Navigation Bar ---------- */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 4px 18px;
+      gap: 8px;
+    }
 
-  /* ---------- How-to ---------- */
-  details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-top:14px;overflow:hidden}
-  summary{cursor:pointer;padding:15px 16px;font-weight:700;font-size:15px;list-style:none;display:flex;align-items:center;gap:8px}
-  summary::-webkit-details-marker{display:none}
-  summary .chev{margin-inline-start:auto;color:var(--faint);transition:transform .2s}
-  details[open] summary .chev{transform:rotate(180deg)}
-  .howbody{padding:0 16px 16px;color:var(--muted);font-size:14.5px}
-  .howbody ol{margin:0;padding-inline-start:20px}
-  .howbody li{margin:8px 0}
-  .howbody code{direction:ltr;background:rgba(255,255,255,.06);padding:2px 7px;border-radius:6px;
-    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px}
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      color: var(--txt-primary);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  /* ---------- Footer ---------- */
-  footer{text-align:center;margin-top:36px;color:var(--faint);font-size:13px}
-  .tg{display:inline-flex;align-items:center;gap:8px;margin-top:12px;text-decoration:none;
-    color:var(--txt);font-weight:700;background:var(--card);border:1px solid var(--line);
-    padding:11px 20px;border-radius:14px}
-  .tg svg{width:19px;height:19px;color:#3b9fe6}
-  .tg:active{transform:translateY(1px)}
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
 
-  /* ---------- Toast ---------- */
-  .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--safe-bot) + 26px);
-    background:#e8fff9;color:#04231c;font-weight:700;font-size:14px;padding:12px 22px;border-radius:14px;
-    box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:50}
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+    .nav-btn:active {
+      transform: scale(0.97);
+    }
 
-  @media (prefers-color-scheme:light){
-    :root{--bg:#f3f5fb;--bg2:#ffffff;--card:#ffffff;--card-hi:#eef2fb;
-      --line:rgba(10,20,40,.10);--txt:#0d1220;--muted:#5a6478;--faint:#8b93a6;--shadow:0 10px 30px rgba(20,30,60,.12)}
-    .title{background:linear-gradient(180deg,#0d1220,#274b8f);-webkit-background-clip:text;background-clip:text}
-    .toast{background:#0d1220;color:#eafff8}
-  }
-</style>
+    .dev-badge {
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.25);
+      background: rgba(56, 189, 248, 0.08);
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      justify-content: center;
+    }
+
+    .dev-badge iconify-icon {
+      font-size: 19px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero-section {
+      text-align: center;
+      padding: 20px 12px 24px;
+      position: relative;
+    }
+
+    .logo-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .repo-logo {
+      width: 104px;
+      height: 104px;
+      border-radius: 26px;
+      object-fit: cover;
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo-wrapper:hover .repo-logo {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .verified-badge {
+      position: absolute;
+      bottom: -3px;
+      inset-inline-end: -3px;
+      width: 28px;
+      height: 28px;
+      background: #0284c7;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--bg);
+      font-size: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(180deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 14px;
+    }
+
+    .features-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--txt-secondary);
+    }
+
+    .chip iconify-icon {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    /* ---------- Quick Add Actions ---------- */
+    .cta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      margin-bottom: 24px;
+    }
+
+    /* Sileo & Zebra Action Buttons */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sileo-main-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, var(--sileo-start), var(--sileo-end));
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(44, 177, 190, 0.35);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sileo-main-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(44, 177, 190, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .sileo-main-btn:active {
+      transform: translateY(1px) scale(0.99);
+    }
+
+    .sileo-main-btn .app-icon-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .zebra-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--txt-primary);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .zebra-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .zebra-btn:active {
+      transform: translateY(1px) scale(0.99);
+    }
+
+    .zebra-icon-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Repo URL Row */
+    .url-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 7px 8px 7px 16px;
+    }
+
+    .url-box code {
+      flex: 1;
+      font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+      font-size: 13.5px;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent);
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(56, 189, 248, 0.25);
+      transform: scale(1.02);
+    }
+
+    .copy-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* ---------- Tweaks Section ---------- */
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 28px 4px 12px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .counter-badge {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* Search Input */
+    .search-box {
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 13px 42px 13px 16px;
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--txt-primary);
+      outline: none;
+      backdrop-filter: blur(12px);
+      transition: all 0.2s ease;
+    }
+
+    [dir="ltr"] .search-box input {
+      padding: 13px 16px 13px 42px;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .search-box input::placeholder {
+      color: var(--txt-muted);
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      inset-inline-end: 15px;
+      color: var(--txt-muted);
+      font-size: 19px;
+      pointer-events: none;
+    }
+
+    [dir="ltr"] .search-icon {
+      inset-inline-end: auto;
+      inset-inline-start: 15px;
+    }
+
+    /* Tweaks Grid */
+    .tweaks-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tweak-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      backdrop-filter: blur(16px);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .tweak-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .tweak-app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+
+    .tweak-app-icon iconify-icon {
+      font-size: 26px;
+    }
+
+    .tweak-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tweak-header-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tweak-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--txt-primary);
+    }
+
+    .tweak-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--txt-secondary);
+    }
+
+    .tweak-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .tweak-version {
+      font-family: ui-monospace, "SF Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      direction: ltr;
+    }
+
+    /* ---------- Guide / Accordion ---------- */
+    .guide-card {
+      margin-top: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+    }
+
+    .guide-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 18px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      user-select: none;
+      list-style: none;
+    }
+
+    .guide-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .guide-summary .summary-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .guide-summary iconify-icon.chev {
+      transition: transform 0.25s ease;
+      color: var(--txt-muted);
+      font-size: 20px;
+    }
+
+    details[open] .guide-summary iconify-icon.chev {
+      transform: rotate(180deg);
+    }
+
+    .guide-body {
+      padding: 0 18px 18px;
+      color: var(--txt-secondary);
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 14px;
+    }
+
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      flex: 1;
+    }
+
+    .step-text code {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-family: ui-monospace, "SF Mono", monospace;
+      font-size: 12.5px;
+      color: var(--accent);
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--txt-primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .footer-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .footer-copy {
+      color: var(--txt-muted);
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    /* ---------- Toast Alert ---------- */
+    .toast {
+      position: fixed;
+      bottom: calc(var(--safe-bottom) + 24px);
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #ffffff;
+      color: #04122b;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast iconify-icon {
+      color: #10b981;
+      font-size: 18px;
+    }
+
+    /* Modal for QR */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 999;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background: #0f1523;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      max-width: 320px;
+      width: 100%;
+      text-align: center;
+      transform: scale(0.9);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: scale(1);
+    }
+
+    .qr-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+      margin: 16px auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="hero">
-    <img class="logo" src="iqlogo.png" alt="iQTools">
-    <h1 class="title">iQTools</h1>
-    <p class="tagline">مصدر أدوات iQ للجيلبريك — تعديلات نظيفة لأشهر التطبيقات، تحديثات مستمرة.</p>
-    <div class="by">تطوير <b>7md</b></div>
-  </header>
+<div class="container">
 
-  <section class="cta">
-    <a id="sileo" class="btn-sileo" href="#">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#04122b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      إضافة المصدر إلى Sileo
-    </a>
-
-    <div class="managers">
-      <a id="zebra" class="mbtn" href="#"><span class="mi">🦓</span>Zebra</a>
-      <a id="cydia" class="mbtn" href="#"><span class="mi">📦</span>Cydia</a>
-      <a id="saily" class="mbtn" href="#"><span class="mi">⛵️</span>Saily</a>
+  <!-- Top Navigation & Language Switcher -->
+  <nav class="top-nav">
+    <!-- Developer Icon Only -->
+    <div class="nav-btn dev-badge" title="Developer" aria-label="Developer">
+      <iconify-icon icon="lucide:code-xml"></iconify-icon>
     </div>
 
-    <div class="urlrow">
-      <code id="repourl">…</code>
-      <button class="copy" id="copybtn">نسخ</button>
+    <div class="nav-actions">
+      <!-- Language Toggle -->
+      <button class="nav-btn" id="lang-btn" aria-label="Toggle language">
+        <iconify-icon icon="lucide:languages"></iconify-icon>
+        <span id="lang-text">English</span>
+      </button>
+
+      <!-- Telegram Channel -->
+      <a class="nav-btn" href="https://t.me/iQTweak" target="_blank" rel="noopener" aria-label="Telegram">
+        <iconify-icon icon="simple-icons:telegram" style="color:#229ED9; font-size:16px;"></iconify-icon>
+        <span>iQTweak</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="logo-wrapper">
+      <img class="repo-logo" src="iqlogo.png" alt="iQTools Logo">
+      <div class="verified-badge" title="Verified Jailbreak Source">
+        <iconify-icon icon="lucide:check"></iconify-icon>
+      </div>
+    </div>
+    
+    <h1 class="hero-title">iQTools Repo</h1>
+    
+    <div class="features-chips">
+      <span class="chip"><iconify-icon icon="lucide:layers"></iconify-icon> <span data-i18n="chip1">حزمة تطبيقات متكاملة</span></span>
+      <span class="chip"><iconify-icon icon="lucide:sparkles"></iconify-icon> <span data-i18n="chip2">مميزات حصرية</span></span>
+      <span class="chip"><iconify-icon icon="lucide:shield-check"></iconify-icon> <span data-i18n="chip3">أمان وخصوصية تامة</span></span>
+    </div>
+  </header>
+
+  <!-- Quick Add Section (Sileo + Zebra) -->
+  <section class="cta-card">
+    <div class="actions-grid">
+      <!-- Sileo Add -->
+      <a id="sileo-link" class="sileo-main-btn" href="#">
+        <span class="app-icon-img" style="background:#ffffff; padding: 4px;">
+          <svg viewBox="0 0 272 285" fill="#2CB1BE" style="width:100%;height:100%;">
+            <path d="M117.13,39.16 C128.77,32.28 143.23,32.28 154.87,39.16 L253.78,97.66 C265.07,104.34 272,116.49 272,129.62 L272,223.38 C272,236.51 265.07,248.66 253.78,255.34 L154.87,313.84 C143.23,320.72 128.77,320.72 117.13,313.84 L18.22,255.34 C6.93,248.66 0,236.51 0,223.38 L0,129.62 C0,116.49 6.93,104.34 18.22,97.66 L117.13,39.16 Z M243.57,222.89 L243.57,210.38 C243.57,209.19 242.61,208.22 241.43,208.22 C241.05,208.22 240.67,208.32 240.34,208.52 L154.35,260.06 C152.08,261.42 150.69,263.89 150.69,266.56 L150.69,278.97 C150.69,280.16 151.65,281.13 152.83,281.13 C153.21,281.13 153.58,281.02 153.91,280.83 L239.9,229.39 C242.17,228.03 243.57,225.56 243.57,222.89 Z M202.82,206.97 L202.82,194.31 C202.82,193.1 201.86,192.12 200.69,192.12 C200.31,192.12 199.93,192.23 199.6,192.43 L154.33,220.03 C152.07,221.41 150.69,223.91 150.69,226.6 L150.69,239.17 C150.69,240.38 151.64,241.36 152.82,241.36 C153.2,241.36 153.57,241.25 153.9,241.05 L199.16,213.55 C201.43,212.18 202.82,209.67 202.82,206.97 Z M69.84,195.95 L38.36,177.67 C35.37,175.93 31.52,176.92 29.77,179.88 C29.2,180.83 28.9,181.92 28.9,183.02 L28.9,217.38 C28.9,223.98 32.44,230.08 38.2,233.43 L69.67,251.71 C72.66,253.44 76.51,252.45 78.27,249.5 C78.83,248.55 79.13,247.46 79.13,246.35 L79.13,212 C79.13,205.4 75.6,199.29 69.84,195.95 Z" transform="scale(0.85) translate(20, 15)"></path>
+          </svg>
+        </span>
+        <span data-i18n="addSileoBtn">إضافة إلى Sileo</span>
+      </a>
+
+      <!-- Zebra Add -->
+      <a id="zebra-link" class="zebra-btn" href="#">
+        <div class="zebra-icon-img" style="background:#000;">
+          <svg viewBox="0 0 1024 1024" style="width:100%;height:100%;">
+            <path fill="#fff" fill-rule="evenodd" d="M284.4 0h455.2c98.9 0 134.7 10.3 170.9 29.6a201.6 201.6 0 0 1 83.9 83.9c19.3 36.2 29.6 72 29.6 171v455c0 99-10.3 134.8-29.6 171a201.6 201.6 0 0 1-83.9 83.9c-36.2 19.3-72 29.6-171 29.6h-455c-99 0-134.8-10.3-171-29.6a201.6 201.6 0 0 1-83.9-83.9C10.3 874.3 0 838.5 0 739.5v-455c0-99 10.3-134.8 29.6-171a201.6 201.6 0 0 1 83.9-83.9c36.2-19.3 72-29.6 171-29.6Z"/>
+            <path fill="#E1E8ED" d="M580.5 592.4s22 26.2 43.8 160.8c2.2 14 3.2 28.4 3.4 42.8H784V339.2c-70.2-55.6-166.4-67-282.8-28.2 0 0-86.6-48-98.4-59.8-11.5-11.5-29.7-24.9-19.8 5.6 5.9 17.8 12.3 38 37.8 77.8-55 32.6-72.2 74.9-137 213.5-49.4 105.8-73.5 137.1-59.8 177.6 18.1 53.4 83.6 87.7 140.5 51.4 30.7-22.4 36-62.6 99.6-99.6 58.4-1 116.4-25.6 116.4-85.1Z"/>
+            <path fill="#292F33" d="M472.6 282c44.6-41.6 203.9-39.5 311.4 34.2v117.5s-34 23.3-59.9 139.5c-20.9 93.6-100.4 142.4-105.8 145.6-2.7-14.3-5.4-27.1-8-38.5v-.4S665 653 688 524a374.4 374.4 0 0 1 53.8-137.4 294.4 294.4 0 0 0-37.3-29.4l.2.2s-31.9 27.1-41 122.7C653 590 605 639.3 600.9 643.4c-11.5-40-20-50.6-20.4-51l-1.3-3.4s42.8-64 43-124.9c0-26 24.3-104.1 33.4-132.6a282 282 0 0 0-47.5-14.3s-15 46.8-19 94.8-18 78-31.1 99a372 372 0 0 0-2.5-76.6c-2.2-19.7-4-35.3.5-53.4 9-36 14-69.1 14-69.1a353.1 353.1 0 0 0-47.3-.5v.8c-21.4 1.7-48 8-73.8 17.9 2.8 5 17.7 33.4 16.8 47.9l-.3 6.9c-.8 15.9-1.9 36.9-9.7 42-6.2 4.2-10-12.5-13.7-28.8a190 190 0 0 0-5.3-20.1 257 257 0 0 0-16.4-35.1 208 208 0 0 0-26.8 16.4c6.2 5.1 26.8 23.4 26 37a65 65 0 0 0 6.4 24.5c4.1 10.5 7.8 19.9 2.8 23.2-9 6-31-20-37-37s-20-28.6-20-28.6v-.3l.2-.2c.1-7.2 2.6-85 59-92a538 538 0 0 1 41.7-4Z"/>
+          </svg>
+        </div>
+        <span data-i18n="addZebraBtn">إضافة إلى Zebra</span>
+      </a>
+    </div>
+
+    <!-- Direct Repo URL & Copy & QR code -->
+    <div class="url-box">
+      <iconify-icon icon="lucide:link" style="color:var(--txt-muted); font-size:17px;"></iconify-icon>
+      <code id="repourl">https://repo.iqtweak.com/</code>
+      <button class="copy-btn" id="qr-btn" aria-label="Show QR Code" title="QR Code">
+        <iconify-icon icon="lucide:qr-code"></iconify-icon>
+      </button>
+      <button class="copy-btn" id="copy-btn">
+        <iconify-icon icon="lucide:copy" id="copy-icon"></iconify-icon>
+        <span id="copy-btn-text" data-i18n="copyText">نسخ الرابط</span>
+      </button>
     </div>
   </section>
 
-  <div class="sec-title">الأدوات <span class="count" id="count">0</span></div>
-  <div class="grid" id="grid"></div>
+  <!-- Tweaks Showcase -->
+  <section>
+    <div class="section-head">
+      <div class="section-title-wrap">
+        <h2 class="section-title" data-i18n="tweaksTitle">الأدوات المتوفرة</h2>
+        <span class="counter-badge" id="tweak-counter">7 أدوات</span>
+      </div>
+    </div>
 
-  <details>
-    <summary>كيف أضيف المصدر يدوياً؟ <span class="chev">⌄</span></summary>
-    <div class="howbody">
-      <ol>
-        <li>افتح <b>Sileo</b> ← تبويب <b>Sources</b>.</li>
-        <li>اضغط <b>+</b> بالأعلى.</li>
-        <li>الصق الرابط: <code id="repourl2">…</code></li>
-        <li>اضغط <b>Add Source</b> وانتظر التحديث.</li>
-      </ol>
+    <!-- Search Input -->
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="ابحث عن أداة أو تطبيق (مثل: سناب، يوتيوب، إنستغرام)..." data-i18n-ph="searchPlaceholder" autocomplete="off">
+      <iconify-icon class="search-icon" icon="lucide:search"></iconify-icon>
+    </div>
+
+    <!-- Tweaks List -->
+    <div class="tweaks-grid" id="tweaks-container">
+      <!-- Injected via JavaScript with clean tags and badges -->
+    </div>
+  </section>
+
+  <!-- Manual Installation Guide (Accordion) -->
+  <details class="guide-card">
+    <summary class="guide-summary">
+      <div class="summary-title">
+        <iconify-icon icon="lucide:help-circle" style="color:var(--accent); font-size:20px;"></iconify-icon>
+        <span data-i18n="guideTitle">كيف أضيف المصدر يدوياً إلى جهازي؟</span>
+      </div>
+      <iconify-icon class="chev" icon="lucide:chevron-down"></iconify-icon>
+    </summary>
+    <div class="guide-body">
+      <div class="guide-steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text" data-i18n="step1">افتح تطبيق <b>Sileo</b> أو <b>Zebra</b> وانتقل إلى تبويب <b>المصادر (Sources)</b>.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text" data-i18n="step2">اضغط على زر الإضافة <b>(+)</b> في أعلى الشاشة.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text" data-i18n="step3">الصق رابط السورس: <code class="dynamic-url">https://repo.iqtweak.com/</code></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text" data-i18n="step4">اضغط <b>إضافة المصدر (Add Source)</b> وانتظر ثوانٍ لتحديث الحزم بنجاح.</div>
+        </div>
+      </div>
     </div>
   </details>
 
+  <!-- Footer -->
   <footer>
-    <a class="tg" href="https://t.me/r71il" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9L18 5.9c.4-.3-.1-.5-.6-.2L6.7 12.4l-4.6-1.4c-1-.3-1-1 .2-1.5L20.5 2.6c.8-.3 1.6.2 1.4 1.7z"/></svg>
-      قناة التيليجرام
-    </a>
-    <p style="margin-top:16px">© iQTools · جميع الأدوات مجانية</p>
+    <div class="footer-links">
+      <a class="footer-btn" href="https://t.me/iQTweak" target="_blank" rel="noopener">
+        <iconify-icon icon="simple-icons:telegram" style="color:#229ED9; font-size:18px;"></iconify-icon>
+        <span>iQTweak</span>
+      </a>
+    </div>
+    <p class="footer-copy" dir="rtl" data-i18n="footerText">صنع بحب بواسطة تيم iQTweak</p>
   </footer>
 
 </div>
 
-<div class="toast" id="toast">تم نسخ الرابط ✓</div>
+<!-- QR Code Modal -->
+<div class="modal-overlay" id="qr-modal">
+  <div class="modal-box">
+    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;" data-i18n="qrModalTitle">مسح رمز السورس</h3>
+    <p style="font-size: 13px; color: var(--txt-muted);" data-i18n="qrModalDesc">وجه كاميرا الهاتف إلى الكود للإضافة السريعة</p>
+    <img class="qr-img" id="qr-code-image" src="" alt="Repo QR Code">
+    <button class="nav-btn" id="qr-close" style="width: 100%; justify-content: center; margin-top: 8px;" data-i18n="close">إغلاق</button>
+  </div>
+</div>
 
+<!-- Toast Message -->
+<div class="toast" id="toast">
+  <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+  <span id="toast-message">تم نسخ الرابط بنجاح!</span>
+</div>
+
+<!-- Application Logic -->
 <script>
 (function(){
-  // Repo URL is derived from wherever this page is hosted, so the buttons always point here.
-  var base = location.origin + location.pathname.replace(/index\.html?$/i,'');
-  if(!/\/$/.test(base)) base += '/';
-  var host = base.replace(/^https?:\/\//,'');
+  // Compute base repository URL dynamically
+  var base = location.origin + location.pathname.replace(/index\.html?$/i, '');
+  if (!/\/$/.test(base)) base += '/';
 
+  // Apply URL to all elements
   document.getElementById('repourl').textContent = base;
-  document.getElementById('repourl2').textContent = base;
+  document.querySelectorAll('.dynamic-url').forEach(function(el){ el.textContent = base; });
 
-  document.getElementById('sileo').href = 'sileo://source/' + base;
-  document.getElementById('zebra').href = 'zbra://sources/add/' + base;
-  document.getElementById('saily').href = 'saily://url/' + base;
-  document.getElementById('cydia').href =
-    'cydia://url/https://cydia.saurik.com/api/share#?source=' + base;
+  // Update Package Manager Protocol Links
+  document.getElementById('sileo-link').href = 'sileo://source/' + base;
+  document.getElementById('zebra-link').href = 'zbra://sources/add/' + base;
 
-  // Copy repo URL
+  // QR Code Generation
+  var qrModal = document.getElementById('qr-modal');
+  var qrImg = document.getElementById('qr-code-image');
+  qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&format=svg&data=' + encodeURIComponent(base);
+
+  document.getElementById('qr-btn').addEventListener('click', function(){
+    qrModal.classList.add('open');
+  });
+  document.getElementById('qr-close').addEventListener('click', function(){
+    qrModal.classList.remove('open');
+  });
+  qrModal.addEventListener('click', function(e){
+    if (e.target === qrModal) qrModal.classList.remove('open');
+  });
+
+  // Multilingual Dictionaries
+  var I18N = {
+    ar: {
+      chip1: "حزمة تطبيقات متكاملة",
+      chip2: "مميزات حصرية",
+      chip3: "أمان وخصوصية تامة",
+      addSileoBtn: "إضافة إلى Sileo",
+      addZebraBtn: "إضافة إلى Zebra",
+      copyText: "نسخ الرابط",
+      copied: "تم نسخ رابط السورس بنجاح!",
+      tweaksTitle: "الأدوات المتوفرة",
+      tweaksCountSuffix: "أدوات",
+      searchPlaceholder: "ابحث عن أداة أو تطبيق (مثل: سناب، يوتيوب، إنستغرام)...",
+      guideTitle: "كيف أضيف المصدر يدوياً إلى جهازي؟",
+      step1: "افتح تطبيق <b>Sileo</b> أو <b>Zebra</b> وانتقل إلى تبويب <b>المصادر (Sources)</b>.",
+      step2: "اضغط على زر الإضافة <b>(+)</b> في أعلى الشاشة.",
+      step3: "الصق رابط السورس: ",
+      step4: "اضغط <b>إضافة المصدر (Add Source)</b> وانتظر ثوانٍ لتحديث الحزم بنجاح.",
+      footerText: "صنع بحب بواسطة تيم iQTweak",
+      qrModalTitle: "مسح رمز السورس",
+      qrModalDesc: "وجه كاميرا الهاتف إلى الكود للإضافة السريعة",
+      close: "إغلاق"
+    },
+    en: {
+      chip1: "Complete App Suite",
+      chip2: "Exclusive Features",
+      chip3: "Total Security & Privacy",
+      addSileoBtn: "Add to Sileo",
+      addZebraBtn: "Add to Zebra",
+      copyText: "Copy URL",
+      copied: "Repo URL copied to clipboard!",
+      tweaksTitle: "Available Tweaks",
+      tweaksCountSuffix: "Tweaks",
+      searchPlaceholder: "Search tweaks or apps (e.g. Snap, YouTube, Instagram)...",
+      guideTitle: "How to Add Repo Manually?",
+      step1: "Open <b>Sileo</b> or <b>Zebra</b> and navigate to the <b>Sources</b> tab.",
+      step2: "Tap the <b>(+)</b> button in the top corner.",
+      step3: "Paste the repo URL: ",
+      step4: "Tap <b>Add Source</b> and wait a few seconds for packages to refresh.",
+      footerText: "صنع بحب بواسطة تيم iQTweak",
+      qrModalTitle: "Scan Repo QR Code",
+      qrModalDesc: "Point your phone camera to quickly add the repository",
+      close: "Close"
+    }
+  };
+
+  // Tweaks Data (Clean without descriptions or deb buttons)
+  var TWEAKS = [
+    {
+      id: 'iqtube',
+      name: 'iQTube',
+      app: 'YouTube',
+      version: '1.2',
+      icon: 'simple-icons:youtube',
+      iconBg: '#FF0033',
+      iconColor: '#FFFFFF'
+    },
+    {
+      id: 'iqgram',
+      name: 'iQGram',
+      app: 'Instagram',
+      version: '1.2',
+      icon: 'simple-icons:instagram',
+      iconBg: 'linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)',
+      iconColor: '#FFFFFF'
+    },
+    {
+      id: 'iqsnap',
+      name: 'iQSnap',
+      app: 'Snapchat',
+      version: '0.0.1',
+      icon: 'simple-icons:snapchat',
+      iconBg: '#FFFC00',
+      iconColor: '#000000'
+    },
+    {
+      id: 'iqsnapiota',
+      name: 'iQSnapiOTA',
+      app: 'Snapchat iOTA',
+      version: '1.0',
+      icon: 'simple-icons:snapchat',
+      iconBg: 'linear-gradient(135deg, #FFE600, #F59E0B)',
+      iconColor: '#000000'
+    },
+    {
+      id: 'iqwhats',
+      name: 'iQWhats',
+      app: 'WhatsApp',
+      version: '1.0',
+      icon: 'simple-icons:whatsapp',
+      iconBg: '#25D366',
+      iconColor: '#FFFFFF'
+    },
+    {
+      id: 'iqface',
+      name: 'iQFace',
+      app: 'Facebook',
+      version: '1.1',
+      icon: 'simple-icons:facebook',
+      iconBg: '#1877F2',
+      iconColor: '#FFFFFF'
+    },
+    {
+      id: 'iqtwitter',
+      name: 'iQTwitter',
+      app: 'X / Twitter',
+      version: '1.0',
+      icon: 'simple-icons:x',
+      iconBg: '#000000',
+      iconColor: '#FFFFFF'
+    }
+  ];
+
+  // Automatic Device Language Detection:
+  // Checks if user previously chose a language in localStorage;
+  // If not, checks device language. If Arabic ('ar') -> 'ar', otherwise defaults to English ('en').
+  function detectDeviceLanguage() {
+    var saved = localStorage.getItem('iq_lang');
+    if (saved === 'ar' || saved === 'en') {
+      return saved;
+    }
+    var navLang = (navigator.language || (navigator.languages && navigator.languages[0]) || navigator.userLanguage || '').toLowerCase();
+    return navLang.startsWith('ar') ? 'ar' : 'en';
+  }
+
+  var currentLang = detectDeviceLanguage();
+
+  function renderTweaks(query) {
+    var container = document.getElementById('tweaks-container');
+    container.innerHTML = '';
+    query = (query || '').toLowerCase().trim();
+
+    var filtered = TWEAKS.filter(function(t){
+      if (!query) return true;
+      var hay = (t.name + ' ' + t.app).toLowerCase();
+      return hay.indexOf(query) !== -1;
+    });
+
+    document.getElementById('tweak-counter').textContent = filtered.length + ' ' + I18N[currentLang].tweaksCountSuffix;
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--txt-muted);">' + 
+        (currentLang === 'ar' ? 'لا توجد أدوات مطابقة للبحث' : 'No tweaks match your search') + '</div>';
+      return;
+    }
+
+    filtered.forEach(function(t){
+      var card = document.createElement('div');
+      card.className = 'tweak-card';
+
+      card.innerHTML = 
+        '<div class="tweak-app-icon" style="background:' + t.iconBg + '; color:' + t.iconColor + ';">' +
+          '<iconify-icon icon="' + t.icon + '"></iconify-icon>' +
+        '</div>' +
+        '<div class="tweak-info">' +
+          '<div class="tweak-header-line">' +
+            '<span class="tweak-name">' + t.name + '</span>' +
+            '<span class="tweak-tag">' + t.app + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="tweak-actions">' +
+          '<span class="tweak-version">v' + t.version + '</span>' +
+        '</div>';
+
+      container.appendChild(card);
+    });
+  }
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('iq_lang', lang);
+    var isRtl = lang === 'ar';
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+
+    // Toggle button label (shows target language or current)
+    document.getElementById('lang-text').textContent = isRtl ? 'English' : 'العربية';
+
+    // Apply translations
+    var dict = I18N[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (dict[key]) el.innerHTML = dict[key];
+    });
+
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-ph');
+      if (dict[key]) el.placeholder = dict[key];
+    });
+
+    var searchVal = document.getElementById('search-input').value;
+    renderTweaks(searchVal);
+  }
+
+  // Language switcher event
+  document.getElementById('lang-btn').addEventListener('click', function(){
+    applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
+  });
+
+  // Search input event
+  document.getElementById('search-input').addEventListener('input', function(e){
+    renderTweaks(e.target.value);
+  });
+
+  // Toast Notification
   var toast = document.getElementById('toast');
-  function ping(){ toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show');},1600); }
-  document.getElementById('copybtn').addEventListener('click', function(){
-    var t = base;
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(t).then(ping, fallback);
-    } else { fallback(); }
-    function fallback(){
-      var i=document.createElement('input'); i.value=t; document.body.appendChild(i);
-      i.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(i); ping();
+  var toastTimer;
+  function showToast(msg) {
+    document.getElementById('toast-message').textContent = msg || I18N[currentLang].copied;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove('show');
+    }, 2200);
+  }
+
+  // Copy Repo URL Button
+  document.getElementById('copy-btn').addEventListener('click', function(){
+    var url = base;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function(){
+        showToast();
+      }, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    function fallbackCopy() {
+      var input = document.createElement('input');
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      try { document.execCommand('copy'); showToast(); } catch(e){}
+      document.body.removeChild(input);
     }
   });
 
-  // Tweaks — icon tile is a brand-colored glyph.
-  var TWEAKS = [
-    {name:'iQSnap',     desc:'أفضل أداة لسناب شات',            ver:'0.0.1', bg:'#FFFC00', fg:'#000', g:'ghost'},
-    {name:'iQSnapiOTA', desc:'سناب شات — كل مزايا iota بأسلوب iQ', ver:'1.0', bg:'#FFFC00', fg:'#000', g:'ghost'},
-    {name:'iQTube',     desc:'أفضل أداة ليوتيوب',              ver:'1.2', bg:'#FF0033', fg:'#fff', g:'play'},
-    {name:'iQWhats',    desc:'أفضل أداة لواتساب',              ver:'1.0', bg:'#25D366', fg:'#fff', g:'whatsapp'},
-    {name:'iQFace',     desc:'أفضل أداة لفيسبوك',              ver:'1.1', bg:'#1877F2', fg:'#fff', g:'facebook'},
-    {name:'iQGram',     desc:'أفضل أداة لإنستغرام',            ver:'1.2', bg:'linear-gradient(135deg,#feda75,#d62976 55%,#4f5bd5)', fg:'#fff', g:'instagram'},
-    {name:'iQTwitter',  desc:'أفضل أداة لتويتر / X',           ver:'1.0', bg:'#000', fg:'#fff', g:'x'}
-  ];
+  // Initialize
+  applyLanguage(currentLang);
 
-  var GLYPH = {
-    play:     '<svg viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5z" fill="CUR"/></svg>',
-    whatsapp: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9 .9-2.2c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.6-.6.8-.8 1-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.2.1.4.1.5.2.1.2.1.6-.1 1.1z" fill="CUR"/></svg>',
-    facebook: '<svg viewBox="0 0 24 24"><path d="M14 8.5V6.8c0-.8.5-1 1-1h1.5V2.6L14 2.5c-2.9 0-3.9 1.8-3.9 3.9v2.1H8v3.2h2.1V22h3.9v-10.3h2.8l.4-3.2H14z" fill="CUR"/></svg>',
-    x:        '<svg viewBox="0 0 24 24"><path d="M17.9 3H21l-6.9 7.9L22 21h-6.3l-4.9-6.4L4.9 21H2l7.4-8.5L2 3h6.5l4.4 5.9L17.9 3zm-1.1 16h1.7L7.3 4.7H5.5L16.8 19z" fill="CUR"/></svg>',
-    instagram:'<svg viewBox="0 0 24 24" fill="none"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" stroke="CUR" stroke-width="2"/><circle cx="12" cy="12" r="4.1" stroke="CUR" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.4" fill="CUR"/></svg>',
-    ghost:    '<svg viewBox="0 0 24 24"><path d="M12 2.4c-3.5 0-6.3 2.8-6.3 6.3v8.9c0 .9 1 1.4 1.7.8l1.3-1.1 1.6 1.3c.5.4 1.2.4 1.7 0l1.3-1.1 1.3 1.1c.5.4 1.2.4 1.7 0l1.6-1.3 1.3 1.1c.7.6 1.7.1 1.7-.8V8.7c0-3.5-2.8-6.3-6.3-6.3zM9.6 9.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zm4.8 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" fill="CUR"/></svg>'
-  };
-
-  var grid = document.getElementById('grid');
-  document.getElementById('count').textContent = TWEAKS.length;
-  TWEAKS.forEach(function(t){
-    var card = document.createElement('div'); card.className='card';
-    var glyph = (GLYPH[t.g]||'').replace(/CUR/g, t.fg);
-    card.innerHTML =
-      '<div class="tile" style="background:'+t.bg+';color:'+t.fg+'">'+glyph+'</div>'+
-      '<div class="meta"><p class="name">'+t.name+'</p><p class="desc">'+t.desc+'</p></div>'+
-      '<span class="ver">v'+t.ver+'</span>';
-    grid.appendChild(card);
-  });
 })();
 </script>
+
 </body>
 </html>
