@@ -34,42 +34,6 @@ Author: 7md
 Name: iQGram
 Icon: https://repo.iqtweak.com/icons/com.7md.iqgram.png
 
-Package: com.7md.iqsnap
-Version: 0.0.1
-Architecture: iphoneos-arm64
-Maintainer: 7md
-Installed-Size: 284
-Depends: mobilesubstrate
-Filename: debs/com.7md.iqsnap_0.0.1_iphoneos-arm64.deb
-Size: 85122
-MD5sum: bef8594d9221fd3c6e0eba753dfe0247
-SHA1: 8aab7e15dd365e22e7594393853fb00f2ad376a8
-SHA256: c2888794b86dd64d0b9841176c60cc3dbe3324ca2e4d2194ced8b95114248428
-Section: Tweaks
-Homepage: https://t.me/r71il
-Description: best Tweak for Snapchat
-Author: 7md
-Name: iQSnap
-Icon: https://repo.iqtweak.com/icons/com.7md.iqsnap.png
-
-Package: com.7md.iqsnapiota
-Version: 1.0-20260914.022200
-Architecture: iphoneos-arm64
-Maintainer: 7md
-Installed-Size: 380
-Depends: mobilesubstrate
-Filename: debs/com.7md.iqsnapiota_1.0-20260914.022200_iphoneos-arm64.deb
-Size: 157366
-MD5sum: 173b4cd3108ea7c14eb2534f843d83cb
-SHA1: 3b65c1100160913d307acae046ef1e44df26079f
-SHA256: 828a0154c467b0304ddc971c34c7ff332451f5646b7e73447d9dd073062c1c6e
-Section: Tweaks
-Homepage: https://t.me/r71il
-Description: best Tweak for Snapchat — iota features, iQ house style
-Author: 7md
-Name: iQSnapiOTA
-Icon: https://repo.iqtweak.com/icons/com.7md.iqsnapiota.png
-
 Package: com.7md.iqtelegram
 Version: 1.4
 Architecture: iphoneos-arm64
@@ -105,22 +69,4 @@ Description: best Tweak for YouTube
 Author: 7md
 Icon: https://repo.iqtweak.com/icons/com.7md.iqtube.png
 Name: iQTube
-
-Package: com.7md.iqtwitter
-Version: 1.0-20260830.144817
-Architecture: iphoneos-arm64
-Maintainer: 7md
-Installed-Size: 180
-Depends: mobilesubstrate
-Filename: debs/com.7md.iqtwitter_1.0-20260830.144817_iphoneos-arm64.deb
-Size: 58962
-MD5sum: 882ccd5844bc2068382e6eac9e48631d
-SHA1: 60a22059c70b2cd01f098b3e8c5d5767a50fecb0
-SHA256: f5bc81ad5a3ac5e90c5bfc774d3a726cf7a86cfc23e718a619f5f755158be949
-Section: Tweaks
-Homepage: https://t.me/r71il
-Description: best Tweak for Twitter / X
-Author: 7md
-Name: iQTwitter
-Icon: https://repo.iqtweak.com/icons/com.7md.iqtwitter.png
 
