@@ -124,21 +124,3 @@ Author: 7md
 Name: iQTwitter
 Icon: https://repo.iqtweak.com/icons/com.7md.iqtwitter.png
 
-Package: com.7md.iqwhats
-Version: 1.0-20260920.082301
-Architecture: iphoneos-arm64
-Maintainer: 7md
-Installed-Size: 952
-Depends: mobilesubstrate
-Filename: debs/com.7md.iqwhats_1.0-20260920.082301_iphoneos-arm64.deb
-Size: 342564
-MD5sum: 78ed7f05c7feb87168e6342c41717859
-SHA1: 7d74d5e56d4adb2c55e53f36ea8a7da5cab22ecc
-SHA256: 88ac09aa9cc4e9e73ac5c6d58286f71dda5ad9461a6e553cdc642fdd643c7d42
-Section: Tweaks
-Homepage: https://t.me/r71il
-Description: best Tweak for WhatsApp
-Author: 7md
-Name: iQWhats
-Icon: https://repo.iqtweak.com/icons/com.7md.iqwhats.png
-
