@@ -53,7 +53,7 @@ Name: iQTele Pro
 Icon: https://repo.iqtweak.com/icons/com.7md.iqtelegram.png
 
 Package: com.7md.iqtube
-Version: 1.2-20260918.192207
+Version: 1.2
 Architecture: iphoneos-arm64
 Maintainer: 7md
 Installed-Size: 16464
@@ -65,7 +65,7 @@ SHA1: 9bc48a416e127a090a4d2ead58f409637fc50ea7
 SHA256: 4a4a16d9de20e40e34e2ee666b9f08c50fe458bbac0eab546a20f8886fd9929e
 Section: Tweaks
 Homepage: https://t.me/r71il
-Description: best Tweak for YouTube
+Description: أقوى أداة لليوتيوب — حفظ الفيديوهات بدون إعلانات وتنزيل الميديا والتشغيل بالخلفية
 Author: 7md
 Icon: https://repo.iqtweak.com/icons/com.7md.iqtube.png
 Name: iQTube
