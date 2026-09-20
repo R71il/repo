@@ -1,0 +1,74 @@
+{
+  "repo_name": "iQTools",
+  "repo_description": "7md tweaks — snap, insta, tube & more",
+  "author": "7md",
+  "telegram": "https://t.me/r71il",
+  "twitter": "",
+  "repo_domain": "https://repo.iqtweak.com",
+  "packages": {
+    "com.7md.iqtube": {
+      "name": "iQTube",
+      "app": "YouTube",
+      "version": "1.2-20260918.192207",
+      "description": "أقوى أداة لليوتيوب — حفظ الفيديوهات بدون إعلانات وتنزيل الميديا والتشغيل بالخلفية",
+      "author": "7md",
+      "icon": "icons/com.7md.iqtube.png"
+    },
+    "com.7md.iqgram": {
+      "name": "iQGram",
+      "app": "Instagram",
+      "version": "1.2-20260920.085935",
+      "description": "أداة إنستغرام المتكاملة — حفظ الستوري والريلز بدون علامة مائية وإخفاء الظهور",
+      "author": "7md",
+      "icon": "icons/com.7md.iqgram.png"
+    },
+    "com.7md.iqtelegram": {
+      "name": "iQTele Pro",
+      "app": "Telegram",
+      "version": "1.4",
+      "description": "أقوى وأفضل أداة لتليجرام",
+      "author": "7md",
+      "icon": "icons/com.7md.iqtelegram.png"
+    },
+    "com.7md.iqwhats": {
+      "name": "iQWhats",
+      "app": "WhatsApp",
+      "version": "1.0-20260920.082301",
+      "description": "أداة واتساب الذهبية — حفظ الحالات وقراءة الرسائل المحذوفة وإخفاء متصل الآن",
+      "author": "7md",
+      "icon": "icons/com.7md.iqwhats.png"
+    },
+    "com.7md.iqface": {
+      "name": "iQFace",
+      "app": "Facebook",
+      "version": "1.1-20260918.160517",
+      "description": "أداة فيسبوك الشاملة — تنزيل الفيديوهات بدقة عالية وإزالة كافة الإعلانات",
+      "author": "7md",
+      "icon": "icons/com.7md.iqface.png"
+    },
+    "com.7md.iqsnap": {
+      "name": "iQSnap",
+      "app": "Snapchat",
+      "version": "0.0.1",
+      "description": "أداة سناب شات — حفظ السنابات والقصص بدون علم الطرف الآخر",
+      "author": "7md",
+      "icon": "icons/com.7md.iqsnap.png"
+    },
+    "com.7md.iqsnapiota": {
+      "name": "iQSnapiOTA",
+      "app": "Snapchat iOTA",
+      "version": "1.0-20260914.022200",
+      "description": "إضافة سناب شات بنسخة iOTA الخاصة — مميزات حصرية وسحب وتخطي الحظر",
+      "author": "7md",
+      "icon": "icons/com.7md.iqsnapiota.png"
+    },
+    "com.7md.iqtwitter": {
+      "name": "iQTwitter",
+      "app": "Twitter / X",
+      "version": "1.0-20260830.144817",
+      "description": "أداة تويتر / X — تنزيل مقاطع الفيديو بأعلى جودة وتخطي الإعلانات",
+      "author": "7md",
+      "icon": "icons/com.7md.iqtwitter.png"
+    }
+  }
+}

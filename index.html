@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>iQTools — Official Jailbreak Repo</title>
-  <meta name="description" content="مصدر iQTools الرسمي لأدوات الجيلبريك — سناب، يوتيوب، إنستغرام، واتساب، فيسبوك وتويتر. إضافات قوية ومحدثة باستمرار.">
+  <meta name="description" content="7md tweaks — snap, insta, tube & more">
   <meta name="theme-color" content="#07090e">
   <link rel="icon" href="iqlogo.png">
   <link rel="apple-touch-icon" href="iqlogo.png">
@@ -751,9 +751,9 @@
       </button>
 
       <!-- Telegram Channel -->
-      <a class="nav-btn" href="https://t.me/iQTweak" target="_blank" rel="noopener" aria-label="Telegram">
+      <a class="nav-btn" href="https://t.me/r71il" target="_blank" rel="noopener" aria-label="Telegram">
         <iconify-icon icon="simple-icons:telegram" style="color:#229ED9; font-size:16px;"></iconify-icon>
-        <span>iQTweak</span>
+        <span>r71il</span>
       </a>
     </div>
   </nav>
@@ -767,7 +767,7 @@
       </div>
     </div>
     
-    <h1 class="hero-title">iQTools Repo</h1>
+    <h1 class="hero-title">iQTools</h1>
     
     <div class="features-chips">
       <span class="chip"><iconify-icon icon="lucide:layers"></iconify-icon> <span data-i18n="chip1">حزمة تطبيقات متكاملة</span></span>
@@ -871,9 +871,9 @@
   <!-- Footer -->
   <footer>
     <div class="footer-links">
-      <a class="footer-btn" href="https://t.me/iQTweak" target="_blank" rel="noopener">
+      <a class="footer-btn" href="https://t.me/r71il" target="_blank" rel="noopener">
         <iconify-icon icon="simple-icons:telegram" style="color:#229ED9; font-size:18px;"></iconify-icon>
-        <span>iQTweak</span>
+        <span>r71il</span>
       </a>
     </div>
     <p class="footer-copy" dir="rtl" data-i18n="footerText">صنع بحب بواسطة تيم iQTweak</p>
@@ -976,78 +976,102 @@
   // Tweaks Data (Clean without descriptions or deb buttons)
   var TWEAKS = [
     {
-      id: 'iqtube',
-      name: 'iQTube',
-      app: 'YouTube',
-      version: '1.2',
-      icon: 'simple-icons:youtube',
-      iconBg: '#FF0033',
-      iconColor: '#FFFFFF'
+        "id": "iqtube",
+        "package_id": "com.7md.iqtube",
+        "name": "iQTube",
+        "app": "YouTube",
+        "version": "1.2-20260918.192207",
+        "description": "أقوى أداة لليوتيوب — حفظ الفيديوهات بدون إعلانات وتنزيل الميديا والتشغيل بالخلفية",
+        "customIconUrl": "/icons/com.7md.iqtube.png",
+        "icon": "simple-icons:youtube",
+        "iconBg": "#FF0033",
+        "iconColor": "#FFFFFF"
     },
     {
-      id: 'iqgram',
-      name: 'iQGram',
-      app: 'Instagram',
-      version: '1.2',
-      icon: 'simple-icons:instagram',
-      iconBg: 'linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)',
-      iconColor: '#FFFFFF'
+        "id": "iqgram",
+        "package_id": "com.7md.iqgram",
+        "name": "iQGram",
+        "app": "Instagram",
+        "version": "1.2-20260920.085935",
+        "description": "أداة إنستغرام المتكاملة — حفظ الستوري والريلز بدون علامة مائية وإخفاء الظهور",
+        "customIconUrl": "/icons/com.7md.iqgram.png",
+        "icon": "simple-icons:instagram",
+        "iconBg": "linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)",
+        "iconColor": "#FFFFFF"
     },
     {
-      id: 'iqsnap',
-      name: 'iQSnap',
-      app: 'Snapchat',
-      version: '0.0.1',
-      icon: 'simple-icons:snapchat',
-      iconBg: '#FFFC00',
-      iconColor: '#000000'
+        "id": "iqtelegram",
+        "package_id": "com.7md.iqtelegram",
+        "name": "iQTele Pro",
+        "app": "Telegram",
+        "version": "1.4",
+        "description": "أقوى وأفضل أداة لتليجرام",
+        "customIconUrl": "/icons/com.7md.iqtelegram.png",
+        "icon": "simple-icons:telegram",
+        "iconBg": "#229ED9",
+        "iconColor": "#FFFFFF"
     },
     {
-      id: 'iqsnapiota',
-      name: 'iQSnapiOTA',
-      app: 'Snapchat iOTA',
-      version: '1.0',
-      icon: 'simple-icons:snapchat',
-      iconBg: 'linear-gradient(135deg, #FFE600, #F59E0B)',
-      iconColor: '#000000'
+        "id": "iqwhats",
+        "package_id": "com.7md.iqwhats",
+        "name": "iQWhats",
+        "app": "WhatsApp",
+        "version": "1.0-20260920.082301",
+        "description": "أداة واتساب الذهبية — حفظ الحالات وقراءة الرسائل المحذوفة وإخفاء متصل الآن",
+        "customIconUrl": "/icons/com.7md.iqwhats.png",
+        "icon": "simple-icons:whatsapp",
+        "iconBg": "#25D366",
+        "iconColor": "#FFFFFF"
     },
     {
-      id: 'iqwhats',
-      name: 'iQWhats',
-      app: 'WhatsApp',
-      version: '1.0',
-      icon: 'simple-icons:whatsapp',
-      iconBg: '#25D366',
-      iconColor: '#FFFFFF'
+        "id": "iqface",
+        "package_id": "com.7md.iqface",
+        "name": "iQFace",
+        "app": "Facebook",
+        "version": "1.1-20260918.160517",
+        "description": "أداة فيسبوك الشاملة — تنزيل الفيديوهات بدقة عالية وإزالة كافة الإعلانات",
+        "customIconUrl": "/icons/com.7md.iqface.png",
+        "icon": "simple-icons:facebook",
+        "iconBg": "#1877F2",
+        "iconColor": "#FFFFFF"
     },
     {
-      id: 'iqface',
-      name: 'iQFace',
-      app: 'Facebook',
-      version: '1.1',
-      icon: 'simple-icons:facebook',
-      iconBg: '#1877F2',
-      iconColor: '#FFFFFF'
+        "id": "iqsnap",
+        "package_id": "com.7md.iqsnap",
+        "name": "iQSnap",
+        "app": "Snapchat",
+        "version": "0.0.1",
+        "description": "أداة سناب شات — حفظ السنابات والقصص بدون علم الطرف الآخر",
+        "customIconUrl": "/icons/com.7md.iqsnap.png",
+        "icon": "simple-icons:snapchat",
+        "iconBg": "#FFFC00",
+        "iconColor": "#000000"
     },
     {
-      id: 'iqtele',
-      name: 'iQTele',
-      app: 'Telegram',
-      version: '1.4',
-      icon: 'simple-icons:telegram',
-      iconBg: '#229ED9',
-      iconColor: '#FFFFFF'
+        "id": "iqsnapiota",
+        "package_id": "com.7md.iqsnapiota",
+        "name": "iQSnapiOTA",
+        "app": "Snapchat iOTA",
+        "version": "1.0-20260914.022200",
+        "description": "إضافة سناب شات بنسخة iOTA الخاصة — مميزات حصرية وسحب وتخطي الحظر",
+        "customIconUrl": "/icons/com.7md.iqsnapiota.png",
+        "icon": "simple-icons:snapchat",
+        "iconBg": "#FFFC00",
+        "iconColor": "#000000"
     },
     {
-      id: 'iqtwitter',
-      name: 'iQTwitter',
-      app: 'X / Twitter',
-      version: '1.0',
-      icon: 'simple-icons:x',
-      iconBg: '#000000',
-      iconColor: '#FFFFFF'
+        "id": "iqtwitter",
+        "package_id": "com.7md.iqtwitter",
+        "name": "iQTwitter",
+        "app": "Twitter / X",
+        "version": "1.0-20260830.144817",
+        "description": "أداة تويتر / X — تنزيل مقاطع الفيديو بأعلى جودة وتخطي الإعلانات",
+        "customIconUrl": "/icons/com.7md.iqtwitter.png",
+        "icon": "simple-icons:x",
+        "iconBg": "#000000",
+        "iconColor": "#FFFFFF"
     }
-  ];
+];
 
   // Automatic Device Language Detection:
   // Checks if user previously chose a language in localStorage;
@@ -1086,15 +1110,24 @@
       var card = document.createElement('div');
       card.className = 'tweak-card';
 
+      var iconContent = t.customIconUrl
+        ? '<img src="' + t.customIconUrl + '" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" alt="icon">'
+        : '<iconify-icon icon="' + t.icon + '"></iconify-icon>';
+
+      var descMarkup = t.description
+        ? '<div style="font-size:12px; color:var(--txt-secondary); margin-top:3px; line-height:1.4;">' + t.description + '</div>'
+        : '';
+
       card.innerHTML = 
-        '<div class="tweak-app-icon" style="background:' + t.iconBg + '; color:' + t.iconColor + ';">' +
-          '<iconify-icon icon="' + t.icon + '"></iconify-icon>' +
+        '<div class="tweak-app-icon" style="background:' + (t.customIconUrl ? 'transparent' : t.iconBg) + '; color:' + t.iconColor + ';">' +
+          iconContent +
         '</div>' +
         '<div class="tweak-info">' +
           '<div class="tweak-header-line">' +
             '<span class="tweak-name">' + t.name + '</span>' +
             '<span class="tweak-tag">' + t.app + '</span>' +
           '</div>' +
+          descMarkup +
         '</div>' +
         '<div class="tweak-actions">' +
           '<span class="tweak-version">v' + t.version + '</span>' +
